@@ -1,0 +1,17 @@
+version: "3.5"
+
+services:
+  face-service:
+    image: superj80820/face-service
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - intranet
+    entrypoint: npm start
+    env_file:
+      - ./.env
+
+networks:
+  intranet:
+    name: intranet

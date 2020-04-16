@@ -1,0 +1,17 @@
+version: "3.5"
+
+services:
+  messfar-line-service:
+    image: superj80820/messfar-line-service:latest
+    restart: always
+    ports:
+      - 3003:3003
+    networks:
+      - intranet
+    entrypoint: npm start
+    env_file:
+      - ./.env
+
+networks:
+  intranet:
+    name: intranet
