@@ -1,16 +1,14 @@
 version: "3.5"
 
 services:
-  messfar-line-service:
-    image: superj80820/messfar-line-service:latest
+  api-gateway:
+    image: superj80820/api-gateway:latest
     restart: always
     ports:
-      - 3002:3002
+      - 3003:3003
     networks:
       - intranet
     entrypoint: npm start
-    env_file:
-      - ./.env
 
 networks:
   intranet:
