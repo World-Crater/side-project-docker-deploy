@@ -8,6 +8,9 @@ popd
 pushd auth-service
 docker-compose up -d
 popd
+pushd file-service
+docker-compose up -d
+popd
 pushd messfar-line-service
 docker-compose up -d
 popd
