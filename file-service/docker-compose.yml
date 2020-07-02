@@ -2,7 +2,7 @@ version: "3.5"
 
 services:
   file-service:
-    build: .
+    image: superj80820/file-service
     restart: always
     ports:
       - 3001:3001
