@@ -12,7 +12,6 @@ services:
       - ./.env
     volumes:
       - ./.env:/app/.env
-      - ./credentials:/.aws/credentials
 
 networks:
   intranet:
