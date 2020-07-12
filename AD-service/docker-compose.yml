@@ -1,0 +1,18 @@
+version: "3.5"
+
+services:
+  ad-service:
+    image: superj80820/ad-service
+    restart: always
+    ports:
+      - 3006:3006
+    networks:
+      - intranet
+    env_file:
+      - ./.env
+    volumes:
+      - ./.env:/app/.env
+
+networks:
+  intranet:
+    name: intranet
