@@ -4,8 +4,11 @@ services:
   api-gateway:
     image: superj80820/api-gateway:latest
     restart: always
+    volumes:
+      - ./privkey.pem:/api-gateway/privkey.pem
+      - ./cert.pem:/api-gateway/cert.pem
     ports:
-      - 3003:3003
+      - 8090:3003
     networks:
       - intranet
     entrypoint: npm start
