@@ -1,0 +1,14 @@
+version: "3.5"
+
+services:
+  messfar-frontend:
+    image: superj80820/messfar-frontend
+    restart: always
+    expose:
+      - 80
+    networks:
+      - intranet
+
+networks:
+  intranet:
+    name: intranet

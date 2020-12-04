@@ -26,3 +26,6 @@ popd
 pushd redis
 docker-compose up -d
 popd
+pushd messfar-frontend
+docker-compose up -d
+popd
