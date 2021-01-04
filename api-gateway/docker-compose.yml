@@ -5,8 +5,8 @@ services:
     image: superj80820/api-gateway:latest
     restart: always
     volumes:
-      - ./privkey.pem:/api-gateway/privkey.pem
-      - ./cert.pem:/api-gateway/cert.pem
+      - ./*.worldcrater.com:/api-gateway/*.worldcrater.com
+      - ./messfar.com:/api-gateway/messfar.com
     ports:
       - 8090:3003
     networks:
