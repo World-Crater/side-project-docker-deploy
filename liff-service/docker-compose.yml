@@ -1,0 +1,16 @@
+version: "3.5"
+
+services:
+  liff-service:
+    image: superj80820/liff-service
+    restart: always
+    expose:
+      - 8080
+    env_file:
+      - ./.env
+    networks:
+      - intranet
+
+networks:
+  intranet:
+    name: intranet
