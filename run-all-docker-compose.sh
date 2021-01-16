@@ -29,3 +29,6 @@ popd
 pushd messfar-frontend
 docker-compose up -d
 popd
+pushd liff-service
+docker-compose up -d
+popd
