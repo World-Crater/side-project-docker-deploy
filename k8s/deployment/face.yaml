@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: face-deployment
+  labels:
+    app: face
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: face
+  template:
+    metadata:
+      labels:
+        app: face
+    spec:
+      containers:
+      - name: face
+        image: superj80820/face-service
+        env:
+        - name: PG_ENDPOINT
+          valueFrom:
+            configMapKeyRef:
+              name: global-configmap
+              key: rdbms.host
+        - name: PG_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: global-configmap
+              key: rdbms.port
+        - name: PG_SQL_DATABASE
+          valueFrom:
+            configMapKeyRef:
+              name: global-configmap
+              key: rdbms.database
+        - name: PG_SQL_USER
+          valueFrom:
+            configMapKeyRef:
+              name: global-configmap
+              key: rdbms.user
+        - name: PG_SQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: global-secret
+              key: rdbms.password
+        - name: FACEPP_KEY
+          valueFrom:
+            secretKeyRef:
+              name: global-secret
+              key: facepp.key
+        - name: FACEPP_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: global-secret
+              key: facepp.secret
+        - name: FACEPP_FACESET
+          valueFrom:
+            secretKeyRef:
+              name: global-secret
+              key: facepp.faceset
+        - name: IMGUR_CLINET_ID
+          valueFrom:
+            secretKeyRef:
+              name: global-secret
+              key: imgur.client_id
+        - name: FILE_SERVICE
+          valueFrom:
+            configMapKeyRef:
+              name: global-configmap
+              key: service.file
+        - name: PORT
+          value: "3000"
+        command: ["npm", "start"]
+        ports:
+        - containerPort: 3000

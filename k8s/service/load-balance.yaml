@@ -4,7 +4,7 @@
     name: load-balancer-service
   spec:
     selector:
-      app: example
+      app: hello-world
     ports:
       - port: 80
         targetPort: 80

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: global-configmap
+data:
+  rdbms.host: "messbox-production.ctkl4k0cqqgm.ap-northeast-1.rds.amazonaws.com"
+  rdbms.port: "5432"
+  rdbms.database: "messfar"
+  rdbms.user: "yorklin"
+
+  service.file: "http://file-service:3001"
