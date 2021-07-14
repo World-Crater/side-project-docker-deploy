@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
       - name: hello-world
+        imagePullPolicy: Always
         image: tutum/hello-world
         ports:
         - containerPort: 80

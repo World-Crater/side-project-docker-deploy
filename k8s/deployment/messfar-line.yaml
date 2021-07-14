@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: messfar-line-deployment
+  labels:
+    app: messfar-line
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: messfar-line
+  template:
+    metadata:
+      labels:
+        app: messfar-line
+    spec:
+      containers:
+      - name: messfar-line
+        imagePullPolicy: Always
+        image: superj80820/messfar-line-service
+        env:
+        - name: REDIS_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: global-configmap
+              key: redis.host
+        - name: REDIS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: global-secret
+              key: redis.password
+        - name: RECOGNITION_URL
+          valueFrom:
+            configMapKeyRef:
+              name: global-configmap
+              key: service.face
+        - name: LINE_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: global-secret
+              key: line.token
+        - name: PORT
+          value: "3002"
+        command: ["npm", "start"]
+        ports:
+        - containerPort: 3002

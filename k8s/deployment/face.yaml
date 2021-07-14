@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
       - name: face
+        imagePullPolicy: Always
         image: superj80820/face-service
         env:
         - name: PG_ENDPOINT
