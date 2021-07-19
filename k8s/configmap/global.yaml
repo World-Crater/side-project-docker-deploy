@@ -8,7 +8,7 @@ data:
   rdbms.database: "messfar"
   rdbms.user: "yorklin"
 
-  service.file: "file-service:3001"
-  service.face: "face-service:3000"
+  service.file: "http://file-service:3001"
+  service.face: "http://face-service:3000"
 
   redis.host: "redis"

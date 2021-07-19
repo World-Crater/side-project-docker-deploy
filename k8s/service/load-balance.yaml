@@ -4,8 +4,8 @@ metadata:
   name: load-balancer-service
 spec:
   selector:
-    app: hello-world
+    app: messfar-line
   ports:
-    - port: 80
-      targetPort: 80
+    - port: 3002
+      targetPort: 3002
   type: LoadBalancer
