@@ -3,7 +3,6 @@ version: "3.5"
 services:
   face-parsing:
     image: superj80820/face-parsing
-    restart: always
     networks:
       - intranet
 
