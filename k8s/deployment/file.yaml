@@ -43,6 +43,6 @@ spec:
         - name: IMAGE_BUCKET_NAME
           value: worldcrater.image
         - name: PORT
-          value: "3000"
+          value: "3001"
         ports:
-        - containerPort: 3000
+        - containerPort: 3001
