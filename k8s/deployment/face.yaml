@@ -63,7 +63,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: global-secret
-              key: imgur.client_id
+              key: imgur.client.id
         - name: FILE_SERVICE
           valueFrom:
             configMapKeyRef:

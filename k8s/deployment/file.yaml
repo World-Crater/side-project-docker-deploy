@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: file-deployment
+  labels:
+    app: file
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: file
+  template:
+    metadata:
+      labels:
+        app: file
+    spec:
+      containers:
+      - name: file
+        imagePullPolicy: Always
+        image: superj80820/file-service
+        env:
+        - name: IMGUR_CLINET_ID
+          valueFrom:
+            secretKeyRef:
+              name: global-secret
+              key: imgur.client.id
+        - name: DYNAMODB_FILE_SERVICE_IMAGES_NAME
+          value: file-service-images
+        - name: AWS_REGION
+          value: ap-northeast-1
+        - name: AWS_PROFILE
+          value: creater-file-service
+        - name: AWS_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              name: global-secret
+              key: aws.access.key.id
+        - name: AWS_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: global-secret
+              key: aws.secret.access.key
+        - name: IMAGE_BUCKET_NAME
+          value: worldcrater.image
+        - name: PORT
+          value: "3000"
+        ports:
+        - containerPort: 3000
