@@ -59,6 +59,11 @@ spec:
             secretKeyRef:
               name: global-secret
               key: facepp.faceset
+        - name: FACEPP_FACESET2
+          valueFrom:
+            secretKeyRef:
+              name: global-secret
+              key: facepp.faceset2
         - name: IMGUR_CLINET_ID
           valueFrom:
             secretKeyRef:
