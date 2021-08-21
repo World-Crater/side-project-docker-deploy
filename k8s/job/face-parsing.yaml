@@ -16,8 +16,8 @@ spec:
               name: global-configmap
               key: service.face
         - name: UPLOAD_COUNT
-          value: "1"
+          value: "0"
         - name: RESOURCE_URL_PAGE
-          value: "320"
+          value: "1"
       restartPolicy: Never
   backoffLimit: 1
