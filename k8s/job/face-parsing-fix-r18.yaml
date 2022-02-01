@@ -1,0 +1,31 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: face-parsing-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: face-parsing
+        imagePullPolicy: Always
+        image: superj80820/face-parsing
+        env:
+        - name: FACE_SERVICE
+          valueFrom:
+            configMapKeyRef:
+              name: global-configmap
+              key: service.face
+        - name: UPLOAD_COUNT
+          value: "0"
+        - name: RESOURCE_URL_PAGE
+          value: "1"
+        - name: ACTRESS_UPLOAD_COUNT_MAX
+          value: "10000"
+        - name: ACTION
+          value: "fix_r18"
+        - name: CROP_TO_FIX_R18_LIMIT
+          value: "1000"
+        - name: CROP_TO_FIX_R18_IMAGE_OFFSET_MAX
+          value: "17038"
+      restartPolicy: Never
+  backoffLimit: 1

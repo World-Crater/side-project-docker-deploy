@@ -21,5 +21,7 @@ spec:
           value: "1"
         - name: ACTRESS_UPLOAD_COUNT_MAX
           value: "10000"
+        - name: ACTION
+          value: "add_actresses"
       restartPolicy: Never
   backoffLimit: 1
