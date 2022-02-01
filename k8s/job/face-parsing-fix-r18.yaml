@@ -1,12 +1,12 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: face-parsing-job
+  name: face-parsing-fix-r18-job
 spec:
   template:
     spec:
       containers:
-      - name: face-parsing-fix-r18
+      - name: face-parsing
         imagePullPolicy: Always
         image: superj80820/face-parsing
         env:
