@@ -26,6 +26,6 @@ spec:
         - name: CROP_TO_FIX_R18_LIMIT
           value: "1000"
         - name: CROP_TO_FIX_R18_IMAGE_OFFSET_MAX
-          value: "17038"
+          value: "17041"
       restartPolicy: Never
   backoffLimit: 1
