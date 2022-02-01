@@ -6,7 +6,7 @@ spec:
   template:
     spec:
       containers:
-      - name: face-parsing
+      - name: face-parsing-fix-r18
         imagePullPolicy: Always
         image: superj80820/face-parsing
         env:

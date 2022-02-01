@@ -6,7 +6,7 @@ spec:
   template:
     spec:
       containers:
-      - name: face-parsing
+      - name: face-parsing-add-actresses
         imagePullPolicy: Always
         image: superj80820/face-parsing
         env:
