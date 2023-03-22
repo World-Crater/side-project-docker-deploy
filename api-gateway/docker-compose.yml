@@ -8,7 +8,7 @@ services:
       - ./*.worldcrater.com:/api-gateway/*.worldcrater.com
       - ./messfar.com:/api-gateway/messfar.com
     ports:
-      - 8090:3003
+      - 8443:8443
     networks:
       - intranet
     entrypoint: npm start
