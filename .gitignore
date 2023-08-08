@@ -2,3 +2,4 @@
 api-gateway/*.worldcrater.com
 api-gateway/messfar.com
 redis/data
+db/data
