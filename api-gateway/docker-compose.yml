@@ -4,9 +4,6 @@ services:
   api-gateway:
     image: superj80820/api-gateway:latest
     restart: always
-    # volumes:
-      # - ./*.worldcrater.com:/api-gateway/*.worldcrater.com
-      # - ./messfar.com:/api-gateway/messfar.com
     ports:
       - 8443:8443
     networks:
