@@ -32,3 +32,6 @@ popd
 pushd liff-service
 docker-compose up -d
 popd
+pushd db
+docker-compose up -d
+popd
