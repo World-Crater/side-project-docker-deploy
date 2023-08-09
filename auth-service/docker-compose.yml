@@ -4,6 +4,9 @@ services:
   auth-service:
     image: superj80820/auth-service:latest
     restart: always
+    volumes:
+      - ./key.private.pem:/auth-service/cert/key.private.pem
+      - ./key.public.pem:/auth-service/cert/key.public.pem
     ports:
       - 3005:3005
     networks:

@@ -3,3 +3,5 @@ api-gateway/*.worldcrater.com
 api-gateway/messfar.com
 redis/data
 db/data
+auth-service/key.private.pem
+auth-service/key.public.pem
