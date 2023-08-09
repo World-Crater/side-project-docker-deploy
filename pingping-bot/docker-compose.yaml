@@ -1,0 +1,14 @@
+version: "3.5"
+
+services:
+  pingping-bot:
+    image: superj80820/pingping-bot:latest
+    restart: always
+    networks:
+      - intranet
+    env_file:
+      - ./.env
+
+networks:
+  intranet:
+    name: intranet
